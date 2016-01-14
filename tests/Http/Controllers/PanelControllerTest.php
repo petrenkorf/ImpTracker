@@ -10,6 +10,7 @@ use Test\TestCase;
 
 class PanelControllerTest extends TestCase
 {
+    use WithoutMiddleware;
     /**
      * Verifica se a rota da página principal do painel responde corretamente
      *
