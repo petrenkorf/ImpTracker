@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Issue;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,8 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if ($this->app->environment() == 'local') {
-            $this->app->register('Laracasts\Generators\GeneratorsServiceProvider');
-        }
+        $this->app->bind("App\IssueInterface", function() {
+            return new Issue();
+        });
     }
 }

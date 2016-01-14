@@ -16,11 +16,11 @@ class EndPointControllerTest extends TestCase
      *
      * @return void
      */
-    public function testEndPointRouteExists()
+    public function testEndPointRouteRedirectsIfValidationFails()
     {
         $request  = $this->call('POST', '/endpoint');
         
-        $expected = 200;
+        $expected = 302;
         $result   = $request->status();
         
         $this->assertEquals($expected, $result);
@@ -29,11 +29,11 @@ class EndPointControllerTest extends TestCase
     public function testShouldValidateExceptionPost()
     {
         $data = [
-            'project_token' => md5('test'),
-            'stack'         => array(),
-            'line'          => 1,
-            'file'          => 'test.php',
-            'message'       => 'message test',
+            'token'   => md5('test'),
+            'stack'   => ['hue'],
+            'line'    => 1,
+            'file'    => 'test.php',
+            'message' => 'message test',
         ];
 
         $response = $this->call('POST','/endpoint',$data);
