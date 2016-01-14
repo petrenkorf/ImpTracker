@@ -2,7 +2,7 @@
 
 namespace App\Parsers;
 
-class MagentoExceptionParser implements IExceptionParser
+class ExceptionParser implements IExceptionParser
 {
     public function parse(Exception $e)
     {

@@ -4,7 +4,7 @@ namespace App\Parsers;
 
 class LaravelExceptionParser implements IExceptionParser
 {
-    public function parse()
+    public function parse(Exception $e)
     {
         
     }

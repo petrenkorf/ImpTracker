@@ -20,12 +20,12 @@ class ParserFactoryTest extends TestCase
         $factory = new ParserFactory();
 
         $expected = "App\Parsers\MagentoExceptionParser";
-        $result = $factory::make('magento');
+        $result = $factory::make('Magento');
 
         $this->assertInstanceOf($expected, $result);
 
         $expected = "App\Parsers\LaravelExceptionParser";
-        $result = $factory::make('laravel');
+        $result = $factory::make('Laravel');
 
         $this->assertInstanceOf($expected, $result);
     }

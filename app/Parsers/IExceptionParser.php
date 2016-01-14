@@ -4,5 +4,5 @@ namespace App\Parsers;
 
 interface IExceptionParser
 {
-    public function parse();
+    public function parse(Exception $e);
 }

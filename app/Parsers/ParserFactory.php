@@ -11,11 +11,11 @@ class ParserFactory
     {
         switch($parserName)
         {
-            case 'laravel':
+            case 'Laravel':
                 return new LaravelExceptionParser();
             break;
 
-            case 'magento' :
+            case 'Magento' :
                 return new MagentoExceptionParser();
             break;
         }

@@ -1,5 +1,6 @@
-var elixir = require('laravel-elixir');
-
+//var elixir  = require('laravel-elixir');
+var gulp    = require('gulp');
+var phpunit = require('gulp-phpunit');
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -11,6 +12,11 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
-    mix.less('app.less');
+gulp.task('phpunit', function() {
+  gulp.src('')
+    .pipe(phpunit());
+});
+
+gulp.task('watch', function () {
+    gulp.watch(['tests/**/*.php', 'app/**/*.php'], ['phpunit']);
 });
